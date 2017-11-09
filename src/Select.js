@@ -910,6 +910,7 @@ class Select extends React.Component {
           labelKey: this.props.labelKey,
           matchPos: this.props.matchPos,
           matchProp: this.props.matchProp,
+          preferEarlyMatch: this.props.preferEarlyMatch,
           valueKey: this.props.valueKey,
         }
       );
@@ -1215,6 +1216,7 @@ Select.propTypes = {
   options: PropTypes.array,             // array of options
   pageSize: PropTypes.number,           // number of entries to page when using page up/down keys
   placeholder: stringOrNode,            // field placeholder, displayed when there's no value
+  preferEarlyMatch: PropTypes.bool,     // boolean to enable selecting firstly the option(s) which start(s) with text input
   renderInvalidValues: PropTypes.bool,  // boolean to enable rendering values that do not match any options
   required: PropTypes.bool,             // applies HTML5 required attribute when needed
   resetValue: PropTypes.any,            // value to use when you clear the control
@@ -1268,6 +1270,7 @@ Select.defaultProps = {
   optionGroupComponent: OptionGroup,
   pageSize: 5,
   placeholder: 'Select...',
+  preferEarlyMatch: false,
   required: false,
   scrollMenuIntoView: true,
   searchable: true,
